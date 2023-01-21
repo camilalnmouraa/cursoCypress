@@ -1,0 +1,1 @@
+Este arquivo contém comandos e dicas para inicicar um novo projeto com Cypress
