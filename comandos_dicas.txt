@@ -3,3 +3,8 @@ Este arquivo contém comandos e dicas para inicicar um novo projeto com Cypress
 npm init -y
 npm install cypress
 npm install cypress@3.6.0 (caso queira definir a versão)
+
+##Configurar abertura do Cypress
+    1- Aqrquivo package.json
+    2- em script:
+        a- criar outro script ("cypress:open": "cypress open")
