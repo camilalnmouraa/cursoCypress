@@ -1,0 +1,24 @@
+{
+  "name": "cursocypress",
+  "version": "1.0.0",
+  "description": "Testes funcionais (e2e), de API Rest (backend) e de interface gráfica (frontend).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andradeg-luiza/cursoCypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andradeg-luiza/cursoCypress/issues"
+  },
+  "homepage": "https://github.com/andradeg-luiza/cursoCypress#readme",
+  "dependencies": {
+    "cypress": "^3.6.0"
+  }
+}
