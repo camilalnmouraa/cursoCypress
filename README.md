@@ -18,7 +18,7 @@ Meu objetivo: Acessar a aplicação automatizando todas as iterações com o bro
 
 **Linguagens**: JavaScript
 
-**Frameworks**: Cypress 
+**Frameworks**: Cypress (Versão 3.0.6)
 
 
  #### :space_invader: Pré-requisito
