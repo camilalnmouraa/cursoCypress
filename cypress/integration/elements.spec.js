@@ -14,7 +14,7 @@ describe('Work with basic elements', () => {
         cy.get('body').should('contain', 'Cuidado')
         cy.get('span').should('contain', 'Cuidado')
         cy.get('.facilAchar').should('contain', 'Cuidado')
-        cy.get('.facilAchar').should('have.text', 'Cuidado onde clica, muitas armadilhas...')
+            .should('have.text', 'Cuidado onde clica, muitas armadilhas...')
     })
 
     it('Links', () => {
@@ -25,6 +25,25 @@ describe('Work with basic elements', () => {
         cy.get('#resultado').should('have.not.text', 'Voltou!')
         cy.contains('Voltar').click()
         cy.get('#resultado').should('have.text', 'Voltou!')
+    })
+
+    it.only('TextFields', () => {
+        cy.get('#formNome').type('Luiza')
+            .should('have.value', 'Luiza')
+
+        cy.get('#elementosForm\\:sugestoes').type('Sugestão')
+            .should('have.value', 'Sugestão')
+
+        cy.get('#tabelaUsuarios > :nth-child(2) > :nth-child(1) > :nth-child(6) > input').type('Aqui')
+            .should('have.value', 'Aqui')
+
+        cy.get('[data-cy=dataSobrenome]').type('Teste12345{backspace}{backspace}')
+            .should('have.value', 'Teste123')
+
+        cy.get('#elementosForm\\:sugestoes')
+            .clear()
+            .type('Erro{selectall}Acerto', {delay:100})
+            .should('have.value', 'Acerto')
     })
     
 })
