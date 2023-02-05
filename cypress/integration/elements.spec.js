@@ -2,8 +2,15 @@
 
 describe('Work with basic elements', () => {
 
-    it('Text', () => {
+    before(() =>{
         cy.visit('https://wcaquino.me/cypress/componentes.html')
+    })
+
+    beforeEach(() =>{
+        cy.reload()
+    })
+
+    it('Text', () => {
         cy.get('body').should('contain', 'Cuidado')
         cy.get('span').should('contain', 'Cuidado')
         cy.get('.facilAchar').should('contain', 'Cuidado')
@@ -11,7 +18,6 @@ describe('Work with basic elements', () => {
     })
 
     it('Links', () => {
-        cy.visit('https://wcaquino.me/cypress/componentes.html')
         cy.get('[href="#"]').click()
         cy.get('#resultado').should('have.text', 'Voltou!')
 
