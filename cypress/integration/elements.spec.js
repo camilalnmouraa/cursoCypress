@@ -2,11 +2,11 @@
 
 describe('Work with basic elements', () => {
 
-    before(() =>{
+    before(() => {
         cy.visit('https://wcaquino.me/cypress/componentes.html')
     })
 
-    beforeEach(() =>{
+    beforeEach(() => {
         cy.reload()
     })
 
@@ -42,7 +42,7 @@ describe('Work with basic elements', () => {
 
         cy.get('#elementosForm\\:sugestoes')
             .clear()
-            .type('Erro{selectall}Acerto', {delay:100})
+            .type('Erro{selectall}Acerto', { delay: 100 })
             .should('have.value', 'Acerto')
     })
 
@@ -55,16 +55,26 @@ describe('Work with basic elements', () => {
 
         cy.get('[name="formSexo"]').should('have.length', 2)
     })
-    
-    it.only('CheckBox', () => {
+
+    it('CheckBox', () => {
         cy.get('#formComidaPizza')
             .click()
             .should('be.checked')
 
-        cy.get('[name="formComidaFavorita"]').click({multiple:true})
+        cy.get('[name="formComidaFavorita"]').click({ multiple: true })
 
         cy.get('#formComidaPizza').should('not.be.checked')
         cy.get('#formComidaVegetariana').should('be.checked')
+    })
+
+    it.only('ComboBox', () => {
+        cy.get('[data-test=dataEscolaridade]')
+            .select('Superior')
+            .should('have.value', 'superior')
+
+        cy.get('[data-test=dataEscolaridade]')
+            .select('1o grau completo')
+            .should('have.value', '1graucompclear')
     })
 
 })
